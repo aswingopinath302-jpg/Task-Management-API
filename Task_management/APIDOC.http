@@ -1,0 +1,56 @@
+### Register a user
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "aswin",
+    "email": "aswin@example.com",
+    "password": "mypassword123"
+}
+
+### Login
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username": "aswin",
+    "password": "mypassword123"
+}
+
+### Create Task
+POST http://127.0.0.1:8000/tasks/
+Content-Type: application/json
+Authorization: Token fe7ed08bd136af82792a064668ea6dcbced34c33
+
+{
+    "title": "CREATE A TURF MANAGEMENT API",
+    "description": "Complete TURF API",
+    "due_date": "2026-11-30",
+    "status": "in progress"
+}
+
+### List My Tasks
+GET http://127.0.0.1:8000/tasks/
+Authorization: Token fe7ed08bd136af82792a064668ea6dcbced34c33
+
+### Get Single Task
+GET http://127.0.0.1:8000/tasks/1/
+Authorization: Token fe7ed08bd136af82792a064668ea6dcbced34c33
+
+
+### Update Task
+PUT http://127.0.0.1:8000/tasks/1/
+Content-Type: application/json
+Authorization: Token fe7ed08bd136af82792a064668ea6dcbced34c33
+
+
+{
+    "title": "completed python assignment",
+    "description": "python drf assignment is completed",
+    "due_date": "2026-11-28",
+    "status": "completed"
+}
+
+### Delete Task
+DELETE http://127.0.0.1:8000/tasks/2/
+Authorization: Token fe7ed08bd136af82792a064668ea6dcbced34c33
